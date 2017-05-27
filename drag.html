@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>框架</title>
+    <link type="text/css" href="./jQueryUIBootstrap/css/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+</head>
+<body>
+<div id="droppable">请放置到这里！</div>
+<div id="draggable">请拖拽我！</div>
+
+<script src="./jQueryUIBootstrap/assets/js/jquery-1.9.0.min.js" type="text/javascript"></script>
+<script src="./jQueryUIBootstrap/assets/js/jquery-ui-1.10.0.custom.min.js" type="text/javascript"></script>
+<style>
+    body,html{
+        height: 100%;
+        margin: 0;
+    }
+    #draggable {
+        width: 100px;
+        height: 100px;
+        background: #ccc;
+    }
+    #droppable {
+        position: absolute;
+        left: 250px;
+        top: 0;
+        width: 125px;
+        height: 125px;
+        background: #999;
+        color: #fff;
+        padding: 10px;
+    }
+</style>
+<script>
+    var drag = $( "#draggable"),drop = $( "#droppable" );
+    /**
+     * snap 是否对齐到其他元素
+     * snapMode   对其方式
+     * snapTolerance 从要发生对齐的对齐元素边缘起的距离
+     * stack   总是在当前拖拽项的前面
+     * stop  拖拽停止时触发
+     * revert  拖住停止是否回到原位置
+     */
+    drag.draggable({snap: "#droppable",snapMode:"inner",snapTolerance: 30 , revert: "invalid" });
+    drop.droppable({
+        drop: function() {
+            alert( "dropped" );
+        }
+    });
+</script>
+
+</body>
+</html>
