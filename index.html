@@ -200,6 +200,11 @@ function smallWindow(){
             if("false" == str ){
                 B = false;
             }
+            switch ( that.id ){
+                case "d1":  $(".data_window").text("这都是相关绿色背景的相关图标信息！");break;
+                case "d2":  $(".data_window").text("这都是相关黄色背景的相关图标信息！");break;
+                case "d3":  $(".data_window").text("这都是相关红色背景的相关图标信息！");break;
+            }
             if(B){
                 $(".d").addClass( "oldClass" );
                 $(that).removeClass( "oldClass" );
