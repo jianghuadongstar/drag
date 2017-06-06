@@ -243,7 +243,6 @@ function smallWindow(){
                 //$(that).text("我被选中了！");
                 $( ".newClass" ).draggable({ disabled: true });
                 $( ".oldClass" ).draggable({ disabled: false });
-                $( ".oldClass" ).draggable({ distance: 150 });
             }
 
             switch ( that.id ){
@@ -274,7 +273,12 @@ function smallWindow(){
 <script>
     //地图设置
     // 创建地图
-
+    drowMap("d1");
+    drowMap("d2");
+    drowMap("d3");
+    drowMap("d4");
+    $( ".newClass" ).draggable({ disabled: true });
+    $( ".oldClass" ).draggable({ distance: 150 });
 function drowMap(id) {
     var view = new ol.View({
         // 设置成都为地图中心，此处进行坐标转换， 把EPSG:4326的坐标，转换为EPSG:3857坐标，因为ol默认使用的是EPSG:3857坐标
